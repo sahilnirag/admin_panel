@@ -1,4 +1,4 @@
-# po_invoice
+# Zukti Inovations Admin Panel
 
 Nirag-Infotech, offer end-to-end web development solutions empowering various enterprises to transform their businesses. Our expertise grows with your business constantly and our intuitive web solutions best suit your business requirements.
 
