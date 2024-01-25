@@ -1,0 +1,86 @@
+{% extends "layouts/base.html" %}
+{% block title %} Dashboard {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+<style>
+    .recent_user img {
+        height: 115px;
+    }
+
+</style>
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <a href="{% url 'admin_dashboard:all_users' %}">
+                            <div class="netraul_outer">
+                                <div class="left_nature">
+                                    <p>Total Users</p>
+                                    <h5>{{total_users}}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <a href="{% url 'admin_dashboard:all_users' %}?is_active=yes">
+                            <div class="netraul_outer">
+                                <div class="left_nature">
+                                    <p>Active users</p>
+                                    <h5>{{active_users}}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <a href="{% url 'admin_dashboard:all_users' %}?is_active=no">
+                            <div class="netraul_outer">
+                                <div class="left_nature">
+                                    <p>Inactive Users</p>
+                                    <h5>{{inactive_users}}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+<!--                    <div class="col-md-4 col-sm-12">-->
+<!--                        <a href="{% url 'admin_dashboard:all_users' %}?role=employee">-->
+<!--                            <div class="netraul_outer">-->
+<!--                                <div class="left_nature">-->
+<!--                                    <p>Total Employee</p>-->
+<!--                                    <h5>{{total_employee}}</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    {% for user in user_type_group %}-->
+<!--                    <div class="col-md-4 col-sm-12">-->
+<!--                        <a href="{% url 'admin_dashboard:all_users' %}?user_type={{user.user_type}}">-->
+<!--                            <div class="netraul_outer">-->
+<!--                                <div class="left_nature">-->
+<!--                                    <p>Total {{user.user_type}}</p>-->
+<!--                                    <h5>{{user.count}}</h5>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    {% endfor %}-->
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xm-12 more_user">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

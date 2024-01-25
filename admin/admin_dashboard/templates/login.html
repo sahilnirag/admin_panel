@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- link -->
+    <link href="{% static 'PowerBI/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'PowerBI/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Zukti Inovations</title>
+</head>
+<body>
+<section class="login_outer">
+    <div class="container">
+
+        <div class="col-lg-6 col-md-12 offset-lg-3">
+            <div class="login_inner">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} msg" style="position:absolute;">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <div class="logo_outer entna_view">
+                    <a href="/admin/login/">
+                        <img src="{% static 'images/zukti_logo.png' %}" alt="Zukti">
+                        <h3>Admin Panel</h3>
+                    </a>
+                </div>
+
+                <form class="custom_form" action="{% url 'admin_dashboard:login' %}" role="form" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}"/>
+                    {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                    <div class="well well-small text-error" style="border: none">{{ error }}</div>
+                    {% endfor %}
+                    {% endif %}
+                    <div class="input_outer4">
+                        <input type="text" name="username" maxlength="100" placeholder="johndoe@mail.com"
+                               autocapitalize="off"
+                               autocorrect="off" class="form-control textinput textInput"
+                               id="id_username" required autofocus
+                               {% if form.username.value %}value="{{ form.username.value }}" {% endif %}>
+                        {% if form.username.errors %}
+                        <p class="text-error">
+                            {{ form.username.errors|striptags }}
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="input_outer4">
+                        <input type="password" name="password" maxlength="100" autocapitalize="off" autocorrect="off"
+                               class="form-control textinput textInput" id="id_password" required>
+                        {% if form.password.errors %}
+                        <p class="text-error">
+                            {{ form.password.errors|striptags }}
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="loging_outer45">
+                        <button type="submit" name="submit" class="btn" style="background-color: #499ca2; color: #fff;"
+                                id="submit-id-submit">Log in
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/static/PowerBI/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+$(".msg").fadeOut(2500)
+
+
+</script>
+</body>
+</html>
+
+

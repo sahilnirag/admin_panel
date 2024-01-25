@@ -1,0 +1,127 @@
+{% extends "layouts/base.html" %}
+{% block title %} UI Forms {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper container-fluid">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-md-12 col-xm-12">
+                        <div class="custom_edit6">
+                            <h2 class="heading custom_heding7">Profile View</h2>
+                        </div>
+                        <form action="{% url 'admin_dashboard:user_view_edit' id=id mode=url_type%}" class="custom_actibe9"
+                              enctype="multipart/form-data" method="post">
+                            {%csrf_token%}
+                            {% if user.image %}
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                            <img src="{{user.image.url}}">
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <label class="full_nam4">First Name</label>
+                                    <div class="staic_outer">
+                                        <input name="first_name" required type="text" value="{{user.first_name}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="full_nam4">Last Name</label>
+                                    <div class="staic_outer">
+                                        <input name="last_name" required type="text" value="{{user.last_name}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="full_nam4">Email</label>
+                                    <div class="staic_outer">
+                                        <input name="email" required type="email" value="{{user.email}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <div class="input8">
+                                        <span class="custom_acy7">Is PD Distance</span>
+                                        <input type="checkbox" class="custon_avt" name="is_pd_distance" {% if user.is_pd_distance %} checked="checked" {% endif %}>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input8">
+                                        <span class="custom_acy7">Is Reading Distance</span>
+                                        <input type="checkbox" class="custon_avt" name="is_reading_distance" {% if user.is_reading_distance %} checked="checked" {% endif %}>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input8">
+                                        <span class="custom_acy7">Is Ft Meter</span>
+                                        <input type="checkbox" class="custon_avt" name="is_f_meter" {% if user.is_f_meter %} checked="checked" {% endif %}>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input8">
+                                        <span class="custom_acy7">User Active</span>
+                                        <input checked="checked" class="custon_avt" name="is_active" {% if user.is_active %} type="checkbox" {% endif %}>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            <div class="form-group row">-->
+<!--                                <div class="col-lg-6">-->
+<!--                                    <label class="full_nam4">User Role</label>-->
+<!--                                    <div class="staic_outer">-->
+<!--                                        <select class="form-select" name="role">-->
+<!--                                            <option {% if user.role == "normal" %} selected="selected" {% endif %}value="normal">Normal</option>-->
+<!--                                            <option {% if user.role == "employee" %} selected="selected" {% endif %}value="employee">Employee</option>-->
+<!--                                            <option {% if user.role == "broker" %} selected="selected" {% endif %}value="broker">Broker</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="form-group image row">
+                                {% if user.image %}
+                                <img src="{{user.image.url}}">
+                                {% endif %}
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <button class="btn btn-dark" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+    var role="{{user.role}}"
+    if (role == "broker"){
+        $("div.broker").find(".broker_data").show()
+        $("div.broker").find(".broker_data").find("input").attr("required","required")
+    }else{
+        $("div.broker").find(".broker_data").hide()
+        $("div.broker").find(".broker_data").find("input").removeAttr("required")
+    }
+    $('select[name="role"]').change(function(e){
+        if($(this).val()=="broker"){
+            $("div.broker").find(".broker_data").show()
+            $("div.broker").find(".broker_data").find("input").attr("required","required")
+        }else{
+            $("div.broker").find(".broker_data").hide()
+            $("div.broker").find(".broker_data").find("input").removeAttr("required")
+        }
+    })
+
+
+</script>
+{% endblock %}

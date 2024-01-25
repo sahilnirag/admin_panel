@@ -1,0 +1,78 @@
+.pcoded-navbar {
+    background: #121212 !important;
+    color: #fff;
+    background-image: linear-gradient(to right, #499ca2 , #39366e) !important;
+}
+.navbar-brand {
+    background: #053f4c;
+}
+.netraul_outer {
+    padding: 56px 10px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #499ca2 , #39366e)
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #1753c1 !important;
+    color: #fff !important;
+}
+.btn.btn-success.add_btn {
+    background-color: #1199C7;
+    border: 1px solid #1199C7;
+}
+.logo_outer.entna_view h3 {
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.login_inner {
+    padding: 50px 40px;
+}
+.loging_outer45 .btn {
+    background-image: linear-gradient(to right, #0ca3c9 , #4841bc);
+    border: transparent;
+    width: 100%;
+}
+
+.login_inner {
+    border: 2px solid transparent !important;
+    padding: 80px 40px;
+    text-align: center;
+    background-color: #f3faff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 0px #cccccca8;
+}
+.Recent-Users h5 {
+    background-color: #1753c1;
+  
+}
+.add_btn {
+    background-color: #1753c1;
+    border-color: #1753c1;
+}
+.pagination .active span {
+   background-image: linear-gradient(to right, #0ca3c9 , #4841bc) !important;
+     border: 1px solid #1753c1 !important; 
+}
+.heading.custom_heding7 {
+    background-color: #1753c1;
+
+}
+.form-control.go_button input {
+    background-color: #1199C7;
+    border: 1px solid #1199C7;
+
+}
+ .edit_outer {
+    background-color: #1199C7 !important;
+    border: 1px solid #1199C7 !important;
+}
+#header {
+   background-image: linear-gradient(to right, #0ca3c9 , #4841bc) !important;
+    color: #fff;
+}
+.blck7 {
+    background-color: #1753c1 !important;
+
+}

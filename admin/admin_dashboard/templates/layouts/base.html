@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zukti Inovations</title>
+    <!--[if lt IE 10]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="Datta Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs."
+          name="description"/>
+    <meta content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, datta able, datta able bootstrap admin template, free admin theme, free dashboard template"
+          name="keywords"/>
+    <meta content="CodedThemes" name="author"/>
+    <!-- Favicon icon -->
+    <link href="{% static 'PowerBI/images/favicon.ico' %}" rel="icon" type="image/x-icon">
+    <!-- fontawesome icon -->
+    <link href="{% static 'PowerBI/fonts/fontawesome/css/fontawesome-all.min.css' %}" rel="stylesheet">
+    <!-- animation css -->
+    <link href="{% static 'PowerBI/plugins/animation/css/animate.min.css' %}" rel="stylesheet">
+    <!-- vendor css -->
+    <link href="{% static 'PowerBI/css/admin_dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'PowerBI/css/custom-style.css' %}" rel="stylesheet">
+    <link href="{% static 'PowerBI/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'PowerBI/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'PowerBI/css/slick-theme.css' %}" rel="stylesheet">
+    <link href="{% static 'PowerBI/css/animate.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    {% block stylesheets %}{% endblock stylesheets %}
+    <style>
+    .message_alert {
+        position: absolute;
+        right: 45px;
+        z-index: 9999;
+        color: white;
+        border: #2196f3;
+        background: #2196f3;
+        top: 8px;
+    }
+
+    </style>
+</head>
+<body>
+{% include 'includes/navigation.html' %}
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        {% for msg in messages %}
+        {% if msg %}
+        <div class="alert msg alert-danger message_alert">
+            {{msg}}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% block content %}{% endblock content %}
+    </div>
+</div>
+{% include 'includes/scripts.html' %}
+
+{% block javascripts %}{% endblock javascripts %}
+</body>
+</html>

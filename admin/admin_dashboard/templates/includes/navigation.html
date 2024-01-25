@@ -1,0 +1,37 @@
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <span class="b-title">Zukti Inovation</span>
+            <a class="mobile-menu" href="javascript:" id="mobile-collapse"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item" data-username="dashboard Default Ecommerce CRM Analytics Crypto Project">
+                    <a class="nav-link " href="/backend/"><span class="pcoded-micon"><i class="fa fa-database"></i>
+                    </span><span class="pcoded-mtext">Developer Admin</span></a>
+                </li>
+                <li class="nav-item" data-username="dashboard Default Ecommerce CRM Analytics Crypto Project">
+                    <a class="nav-link " href="{% url 'admin_dashboard:dashboard'%}"><span class="pcoded-micon"><i
+                            class="feather icon-home"></i></span>
+                        <span class="pcoded-mtext">Home</span></a>
+                </li>
+                <li class="nav-item" data-username="dashboard Default Ecommerce CRM Analytics Crypto Project">
+                    <a class="nav-link " href="{% url 'admin_dashboard:all_users'%}"><span class="pcoded-micon"><i
+                            aria-hidden="true" class="fa fa-users"></i>
+                    </span><span class="pcoded-mtext">Users</span></a>
+                </li>
+
+
+                <li class="nav-item" data-username="Disabled Menu">
+                    <a class="nav-link" href="{% url 'admin_dashboard:logout_user'%}">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-power"></i>
+                            </span>
+                        <span class="pcoded-mtext">Logout - [ {{ request.user.email }} ]</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

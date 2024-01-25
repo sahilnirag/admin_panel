@@ -1,0 +1,20 @@
+<!-- Required Js -->
+<script src="/static/PowerBI/js/vendor-all.min.js"></script>
+<script src="/static/PowerBI/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/PowerBI/js/pcoded.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$( ".dropdown-submenu" ).click(function() {
+    $("ul.pcoded-submenu").toggle();
+});
+
+$(".msg").fadeOut(2500)
+{% if request.resolver_match.url_name not in "review_listing" %}
+    $('a.delete_outer').click(function(e){
+        if(!confirm("Are you sure you want to delete this. ?")){
+            e.preventDefault()
+        }
+    })
+{% endif %}
+
+</script>

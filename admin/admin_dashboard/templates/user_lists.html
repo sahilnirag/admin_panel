@@ -1,0 +1,123 @@
+{% extends "layouts/base.html" %}
+{% block title %} Dashboard {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+<style>
+.user_wrapper.recent_user p {
+    text-align: center;
+    font-size: 18px;
+    text-transform: capitalize;
+    background: #2196f3;
+    color: white;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 3px;
+}
+.recent_user img {
+    height: 115px;
+}
+a.add_btn {
+    right: 18px;
+    position: absolute;
+    top: 4px;
+    vertical-align: middle;
+}
+.custom_fot7{
+    float: left;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+.custom_fot7 .form-control {
+    float: left;
+    width: auto;
+}
+.form-control.go_button input {
+    right: 43px;
+    top: 110px;
+}
+select.form-select {
+    padding: 4px;
+    font-weight: 300;
+}
+
+</style>
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper container-fluid">
+                <div class="row">
+                    <div class="Recent-Users col-md-12 col-xm-12">
+                        <h5>All Users <a class="btn btn-success add_btn"
+                                         href="{% url 'admin_dashboard:user_view_edit' id=0 mode='new' %}">Add User</a>
+                        </h5>
+                    </div>
+                    <form action="{% url 'admin_dashboard:all_users' %}" class="custom_fot7" method="get">
+                        {% csrf_token %}
+                        <div class="form-control custom_input9">
+                            <input name="search" placeholder="Enter text to search..." type="text"
+                                   value="{{search}}">
+                        </div>
+                        <div class="form-control custom_input9">
+                            <select class="form-select form-select-sm" name="is_active">
+                                <option value="">Select ActiveUser</option>
+                                <option {% if is_active == "yes"%} selected="selected"{% endif %} value="yes">Active User</option>
+                                <option {% if is_active == "no"%} selected="selected"{% endif %} value="no">Inactive User</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control custom_input9">
+                            <select class="form-select form-select-sm" name="platform">
+                                <option value="">Select Platform</option>
+                                <option {% if platform == "normal"%} selected="selected"{% endif %} value="normal">No platform</option>
+                                <option {% if platform == "google"%} selected="selected"{% endif %} value="google">Google</option>
+                                <option {% if platform == "facebook"%} selected="selected"{% endif %} value="facebook">Facebook</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control go_button">
+                            <input type="submit" value="Go">
+                        </div>
+                    </form>
+                    <div class="Recent-Users col-md-12 col-xm-12">
+                        <div class="table-responsive">
+                            {% if users %}
+                            <table class="table">
+                                <thead class="blck7">
+                                <th>S.No</th>
+                                <th>Email</th>
+                                <td></td>
+                                </thead>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{forloop.counter|add:limit_counts}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td class="both_icon">
+                                        <a class="btn btn-primary edit_outer"
+                                           href="{% url 'admin_dashboard:user_view_edit' id=user.id mode='edit' %}">
+                                            <i class="material-icons">edit</i></a>
+                                        <a class="btn btn-primary delete_outer"
+                                           href="{% url 'admin_dashboard:delete_user' user.id%}">
+                                            <i class="material-icons">close</i></a>
+                                    </td>
+
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            {% else %}
+                            <p>No User Found.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% include "includes/pagination.html" with page_obj=users %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

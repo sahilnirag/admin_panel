@@ -1,0 +1,442 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
+ul,
+ol {
+        margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+
+strong {
+    font-weight: 700;
+}
+
+
+
+:focus {
+    outline: 0;
+}
+
+button {
+    outline: 0;
+    border: none;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a{
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+
+/*************************************/
+/* section.user_profile.padd-row {
+    background-color: #E8ECEF;
+} */
+/* .col-md-2 {
+    background-color: #3f4d67;
+    height: 970px;
+} */
+/***********************************************/
+
+.profile_ctn {
+    padding: 55px;
+    position: relative;
+}
+.profile_ctn:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 158px;
+    background-color: #333f54;
+    top: 0px;
+    left: 0px;
+}
+.candilist_box_rght {
+    background-color: #fff;
+    padding: 35px 35px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+}
+.candilist_box_add i {
+    width: 30px;
+    height: 30px;
+    background-color: #333f54;
+    text-align: center;
+    border-radius: 100%;
+    line-height: 30px;
+    border: 1px solid #333f54;
+    cursor: pointer;
+    color: #fff;
+}
+.candilist_box_add i:hover {
+    background-color: #fff;
+    border: 1px solid #3f4d67;
+    color: #3f4d67;
+}
+.candilist_img_box_img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e1e1e1;
+    padding: 3px;
+}
+.candi_id h4 {
+    background-color: #9c6ee6;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px 8px;
+    border-radius: 43px;
+    width: max-content;
+    border: 1px solid #9c6ee6;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.candi_id h2 {
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: #333f54;
+}
+.candilist_box_list h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333f54;
+}
+.candilist_box_rght {
+    background-color: #f2f2f2;
+    padding: 35px 35px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+}
+.candilist_sectionbox {
+    margin-top: 15px;
+}
+.candilist_sectionbox ul li {
+    display: inline-block;
+    width: 24%;
+}
+/******************six_box_css*******************/
+
+.card {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #0061f2 !important;
+}
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.35rem;
+}
+.total-spend {
+    font-size: 20px;
+}
+.box_list_section {
+    background-color: #0061f2 !important;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    border: 1px solid rgba(31, 45, 65, 0.125);
+    color: #fff;
+    border-radius: 5px;
+}
+.btn_tab_section {
+    padding: 25px 20px;
+    /* border-bottom: 1px solid rgba(31, 45, 65, 0.125); */
+    border-radius: 5px;
+}
+.btn-footer {
+    padding: 10px 20px;
+}
+.bg_color_1{
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #0061f2 !important;
+}
+.bg_color_2{
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #f4a100 !important;
+}
+.bg_color_3{
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #00ac69 !important
+}
+.bg_color_4{
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #e81500 !important
+}
+.bg_color_5{
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #605ea6 !important;
+}
+.bg_color_6{
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
+    background-color: #3f4d67 !important;
+}
+/***********************************************/
+.table_user_profile {
+/*    width: 100%;*/
+    /* border-collapse: collapse; */
+    /* margin: 50px auto; */
+}
+
+/* Zebra striping */
+.table_user_profile tr:nth-of-type(odd) { 
+    background: #eee; 
+    }
+
+.table_user_profile th {
+    background: #1fae66;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table_user_profile td, .table_user_profile th {
+    padding: 10px;
+    border: 1px solid #e3e6ec;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    .table_user_profile { 
+        width: 100%; 
+    }
+
+    /* Force table to not be like tables anymore */
+    .table_user_profile, .table_user_profile thead, .table_user_profile tbody, .table_user_profile th, .table_user_profile td, .table_user_profile tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .table_user_profile thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .table_user_profile tr { border: 1px solid #ccc; }
+    
+    .table_user_profile td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+
+    .table_user_profile td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+
+        color: #000;
+        font-weight: bold;
+    }
+
+}
+
+.card-header {
+    background-color: inherit;
+    padding: 0px;
+}
+ul#myTab a {
+    margin-right: 0px;
+        border: 0 !important;
+}
+ul#myTab a:hover {
+    background-color: #1fae66 !important;
+    color: #fff !important;
+}
+ul#myTab a.active {
+    background-color: #3f4d67 !important;
+    position: relative;
+}
+.tab-content.custom-tab-content {
+    padding: 0px;
+}
+ul#myTab a.active:after {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid #9c6ee6;
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    bottom: 0px;
+}
+#myTab {
+    border-bottom: 1px solid #3f4d67;
+}
+ul#myTab a.active:hover {
+    color: #fff !important;
+}
+.card {
+    background-color: transparent !important;
+    border: 0px !important;
+    box-shadow: none;
+}
+.card-body {
+    background-color: #ffff;
+}
+ul#myTab a {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #fff;
+/*
+    margin-right: 0;
+    border-radius: 0px;
+*/
+    padding: 14px 24px;
+    font-weight: 600;
+    border-radius: 7px 7px 0px 0px;
+    margin-right: 4px;
+}
+.table_user_profile .tab-content {
+    overflow: scroll;
+}
+table.table_user_profile tr th {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.card-body {
+    border-top: 5px solid #1fae66 !important;
+    margin-top: -1px;
+}
+.tab-content {
+    overflow: scroll;
+}
+.card-body {
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+table.table_user_profile tr th, table.table_user_profile tr td {
+    text-align: center;
+}
+.table_user_profile {
+  
+    margin-bottom: 45px;
+}
+table.table_user_profile tr th {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 9px 29px;
+}
+.bg_color_tab_1{
+    background-color: #0094c6 !important;
+}
+.bg_color_tab_2{
+    background-color: #de0f5a !important;
+}
+.bg_color_tab_3{
+    background-color: #4433ae !important;
+}
+.bg_color_tab_4{
+    background-color: #00c48b !important;
+}
+.bg_color_tab_5{
+    background-color: #fa7100 !important;
+}
+.bg_color_tab_6{
+    background-color: #515151 !important;
+}
+
+.bg_color_tab_7{
+    background-color: #fc403b !important;
+}
+h2.headingtt {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+}
+ul#myTab {
+    justify-content: center;
+}
+@media only screen and (max-width: 1366px){
+    .btn_tab_section h4 {
+    font-size: 20px;
+}
+    ul#myTab a {
+    
+    padding: 10px 18px;
+}
+}
+@media only screen and (max-width: 767px){
+    .candilist_details {
+    margin-top: 25px;
+}
+    .candilist_sectionbox ul li {
+    display: inline-block;
+    width: 100%;
+}
+ul#myTab a.active:after {
+    
+    bottom: 0px;
+}
+    ul#myTab a {
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: #2b2727;
+    color: #fff;
+    margin-right: 4px;
+    border-radius: 10px !important;
+    margin-bottom: 7px;
+}
+    .table_user_profile tr {
+    border: 1px solid #ccc;
+    margin-bottom: 25px;
+}
+        }
